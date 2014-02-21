@@ -22,15 +22,6 @@ Then(/^I should not see "(.*?)"$/) do |text|
   page.should_not have_content(text)
 end
 
-# When(/^I should not see "(.*?)"$/) do |arg1|
-#   pending # express the regexp above with the code you wish you had
-# end
-
-# When(/^I should see "(.*?)"$/) do |arg1|
-#   pending # express the regexp above with the code you wish you had
-# end
-
-# Given(/^the following user:$/) do |table|
-#   # table is a Cucumber::Ast::Table
-#   pending # express the regexp above with the code you wish you had
-# end
+Given(/^the user "(.*?)" with "(.*?)"$/) do |email, password|
+  User.create(email: email, password: password, password_confirmation: password)
+end
