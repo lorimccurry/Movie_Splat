@@ -11,10 +11,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140220175409) do
+ActiveRecord::Schema.define(version: 20140223225458) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "movie_entries", force: true do |t|
+    t.boolean  "seen"
+    t.boolean  "own"
+    t.boolean  "wishlist_see"
+    t.boolean  "wishlist_own"
+    t.integer  "user_rating"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.text     "user_comments"
+  end
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
