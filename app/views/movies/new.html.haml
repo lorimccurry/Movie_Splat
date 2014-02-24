@@ -1,0 +1,13 @@
+.row
+  .small-offset-3.small-9.columns
+    %h2.subheader Add a Movie
+
+  = simple_form_for do |f|
+    .inputs
+      .row
+        .small-offset-3.small-6.columns
+          = f.input :title, label: 'Movie Title:', :autofocus => true
+    .actions
+      .row
+        .small-offset-3.small-3.columns
+          = f.button :submit, 'Save', class: 'button tiny radius'

@@ -1,3 +1,7 @@
+And "show me the page" do
+  save_and_open_page
+end
+
 When(/^I go to the home page$/) do
   visit root_path
 end
@@ -14,7 +18,7 @@ When(/^I press "(.*?)"$/) do |text|
   click_button(text)
 end
 
-Then(/^I should see "(.*?)"$/) do |text|
+Then(/^I should see(?::)? "(.*?)"$/) do |text|
   page.should have_content(text)
 end
 
