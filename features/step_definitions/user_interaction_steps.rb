@@ -37,3 +37,14 @@ end
 When(/^I fill in "(.*?)" with "(.*?)"$/) do |field, content|
   fill_in(field, with: content)
 end
+
+When(/^I sign up$/) do
+  steps %Q{
+    When I go to the home page
+    And I follow "Sign Up"
+    And I fill in "joe@example.com" for "Email"
+    And I fill in "password" for "user_password"
+    And I fill in "password" for "Password confirmation"
+    And I press "Sign up"
+  }
+end

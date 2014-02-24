@@ -5,6 +5,7 @@ Feature: Create a movie entry
   I want to be able to enter a new movie into my movie library
 
   Scenario: Creating a movie entry with a title succeeds
+    When I sign up
     When I go to the library page
     # Then I should see "Add a Movie"
     Then I press "Add a Movie"
