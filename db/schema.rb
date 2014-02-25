@@ -25,7 +25,12 @@ ActiveRecord::Schema.define(version: 20140223231947) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.text     "user_comments"
+    t.integer  "user_id"
+    t.integer  "movie_id"
   end
+
+  add_index "movie_entries", ["movie_id"], name: "index_movie_entries_on_movie_id", using: :btree
+  add_index "movie_entries", ["user_id"], name: "index_movie_entries_on_user_id", using: :btree
 
   create_table "movies", force: true do |t|
     t.string   "title"
