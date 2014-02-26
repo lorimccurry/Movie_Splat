@@ -5,7 +5,22 @@
     .inputs
       .row
         .small-offset-3.small-6.columns
-          = f.input_field :seen, as: :boolean, inline_label: 'Seen'
+          = f.input :seen, as: :boolean, inline_label: 'Seen'
+      .row
+        .small-offset-3.small-6.columns
+          = f.input :own, as: :boolean, inline_label: 'Own'
+      .row
+        .small-offset-3.small-6.columns
+          = f.input_field :wishlist_see, as: :boolean, inline_label: 'Wishlist See'
+      .row
+        .small-offset-3.small-6.columns
+          = f.input_field :wishlist_own, as: :boolean, inline_label: 'Wishlist Own'
+      .row
+        .small-offset-3.small-6.columns
+          = f.input :user_rating, as: :integer, label: 'My Rating:'
+      .row
+        .small-offset-3.small-6.columns
+          = f.input :user_comments, as: :text, label: 'My Comments:'
     .actions
       .row
         .small-offset-3.small-3.columns

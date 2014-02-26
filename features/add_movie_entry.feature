@@ -24,15 +24,14 @@ Feature: Create a movie entry
     Then I should see "Add a Movie"
     Then I click "Add a Movie"
     And I should go to the add movie entry page
-    # And show me the page
     Then I check "Seen"
-    # Then I check "Own"
-    # Then I check "Wishlist See"
-    # Then I check "Wishlist Own"
-    # Then I fill in "My Rating:" with "76"
-    # Then I fill in "My Comments:" with "This movie sucks"
+    Then I check "Own"
+    Then I check "Wishlist See"
+    Then I check "Wishlist Own"
+    Then I fill in "My Rating:" with "26"
+    Then I fill in "My Comments:" with "This movie sucks"
     And I press "Save"
+    And there should be a movie entry that is seen that is owned that is wishlist see that is wishlist own with a user rating of "26" and user comments of "This movie sucks" in the database
     Then I should see: "Your movie entry has been saved"
-    And there should be a movie entry that is seen in the database
     Then I go to the library page
-    And I should see: "Movie added to your library"
+    # And I should see: "Movie added to your library"

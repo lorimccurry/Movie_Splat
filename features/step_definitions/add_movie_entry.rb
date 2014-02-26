@@ -6,19 +6,11 @@ Then(/^I should go to the add movie entry page$/) do
   visit new_movie_entry_path
 end
 
-Then(/^I should see "(.*?)" within my library$/) do |arg1|
-  pending # express the regexp above with the code you wish you had
-end
-
 Then(/^I check "(.*?)"$/) do |checkbox|
   check(checkbox)
 end
 
-Then(/^there should be a movie entry that is seen in the database$/) do
-  movie_entry_count = MovieEntry.where(validates_inclusion_of :seen, :in => [true, false]).count
+Then(/^there should be a movie entry that is seen that is owned that is wishlist see that is wishlist own with a user rating of "(.*?)" and user comments of "(.*?)" in the database$/) do |rating, comments|
+  movie_entry_count = MovieEntry.where(:seen && :own && :wishlist_see && :wishlist_own => [true, false], :user_rating => rating, :user_comments => comments).count
   movie_entry_count.should == 1
-end
-
-Then(/^I should see a movie entry that is seen within my library$/) do
-  pending # express the regexp above with the code you wish you had
 end
