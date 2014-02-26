@@ -9,4 +9,8 @@ class MovieEntriesController < ApplicationController
     flash[:notice] = "Your movie has been added"
     redirect_to library_path
   end
+
+  def new
+    @movie_entry = MovieEntry.new
+  end
 end

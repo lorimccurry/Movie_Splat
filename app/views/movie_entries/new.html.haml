@@ -1,12 +1,11 @@
 .row
   .small-offset-3.small-9.columns
     %h2.subheader Add a Movie
-
-  = simple_form_for MovieEntry.new do |f|
+  = simple_form_for @movie_entry do |f|
     .inputs
       .row
         .small-offset-3.small-6.columns
-          = f.input :title, label: 'Movie Title:', :autofocus => true
+          = f.input_field :seen, as: :boolean, inline_label: 'Seen'
     .actions
       .row
         .small-offset-3.small-3.columns
