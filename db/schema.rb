@@ -11,10 +11,52 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140220175409) do
+ActiveRecord::Schema.define(version: 20140225201614) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "movie_entries", force: true do |t|
+    t.boolean  "seen"
+    t.boolean  "own"
+    t.boolean  "wishlist_see"
+    t.boolean  "wishlist_own"
+    t.integer  "user_rating"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.text     "user_comments"
+    t.integer  "user_id"
+    t.integer  "movie_id"
+  end
+
+  add_index "movie_entries", ["movie_id"], name: "index_movie_entries_on_movie_id", using: :btree
+  add_index "movie_entries", ["user_id"], name: "index_movie_entries_on_user_id", using: :btree
+
+  create_table "movies", force: true do |t|
+    t.string   "title"
+    t.string   "year"
+    t.string   "rated"
+    t.string   "released"
+    t.string   "runtime"
+    t.string   "genre"
+    t.text     "director"
+    t.text     "writer"
+    t.text     "actors"
+    t.text     "plot"
+    t.text     "poster"
+    t.integer  "tomato_meter"
+    t.string   "tomato_image"
+    t.integer  "tomato_user_meter"
+    t.string   "DVD"
+    t.string   "box_office"
+    t.string   "production"
+    t.integer  "tomato_reviews"
+    t.integer  "tomato_fresh"
+    t.integer  "tomato_rotten"
+    t.integer  "tomato_user_reviews"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false

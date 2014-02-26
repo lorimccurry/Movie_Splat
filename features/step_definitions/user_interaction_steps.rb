@@ -1,3 +1,7 @@
+And "show me the page" do
+  save_and_open_page
+end
+
 When(/^I go to the home page$/) do
   visit root_path
 end
@@ -14,7 +18,7 @@ When(/^I press "(.*?)"$/) do |text|
   click_button(text)
 end
 
-Then(/^I should see "(.*?)"$/) do |text|
+Then(/^I should see(?::)? "(.*?)"$/) do |text|
   page.should have_content(text)
 end
 
@@ -32,4 +36,25 @@ end
 
 When(/^I fill in "(.*?)" with "(.*?)"$/) do |field, content|
   fill_in(field, with: content)
+end
+
+When(/^I sign up$/) do
+  steps %Q{
+    When I go to the home page
+    And I follow "Sign Up"
+    And I fill in "joe@example.com" for "Email"
+    And I fill in "password" for "user_password"
+    And I fill in "password" for "Password confirmation"
+    And I press "Sign up"
+  }
+end
+
+When(/^I sign in$/) do
+  steps %Q{
+    When I go to the home page
+    And I follow "Sign In"
+    And I fill in "joe@example.com" for "Email"
+    And I fill in "password" for "user_password"
+    And I press "Sign in"
+  }
 end
