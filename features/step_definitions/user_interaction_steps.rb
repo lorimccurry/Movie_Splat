@@ -26,10 +26,6 @@ Then(/^I should not see "(.*?)"$/) do |text|
   page.should_not have_content(text)
 end
 
-Given(/^the user "(.*?)" with "(.*?)"$/) do |email, password|
-  User.create(email: email, password: password, password_confirmation: password)
-end
-
 Given(/^I am on the sign in page$/) do
   visit(user_session_path)
 end

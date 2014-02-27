@@ -4,6 +4,14 @@ Feature: Create a movie entry
   In order to create a library of my movies
   I want to be able to enter a new movie entry into my movie library
 
+  Scenario: Not being logged in
+    When I go to the homepage
+    Then I should see "Sign in or Sign up to open your library"
+    And I should not see "My Library"
+
+  Scenario: Trying to create a blank movie entry fails
+    Given I'm signed in as "amy"
+
   # Scenario: Creating a movie entry with a title succeeds
   #   When I sign up
   #   When I go to the index page
@@ -19,7 +27,7 @@ Feature: Create a movie entry
   #   And I should see "Up" within my index
 
   Scenario: Creating a movie entry alone succeeds
-    When I sign up
+    Given I'm signed in as "amy"
     When I go to the index page
     Then I should see "Add a Movie"
     Then I click "Add a Movie"
