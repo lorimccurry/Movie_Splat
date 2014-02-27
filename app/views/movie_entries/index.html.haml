@@ -1,0 +1,10 @@
+= link_to "Add a Movie", new_movie_entry_path
+
+%table.library
+  %thead
+    %tr
+      %th My Rating
+  %tbody
+    %tr
+      - @movie_entry.each do |movie_entry|
+        %td= movie_entry.user_rating
