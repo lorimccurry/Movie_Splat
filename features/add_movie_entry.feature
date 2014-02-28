@@ -5,9 +5,9 @@ Feature: Create a movie entry
   I want to be able to enter a new movie entry into my movie library
 
   Scenario: Not being logged in
-    When I go to the homepage
-    Then I should see "Sign in or Sign up to open your library"
-    And I should not see "My Library"
+    When I go to the home page
+    Then I should see "Sign in or Sign up to open your movie library"
+    And I should not see "Add a Movie"
 
   Scenario: Trying to create a blank movie entry fails
     Given I'm signed in as "amy"
@@ -42,4 +42,5 @@ Feature: Create a movie entry
     And there should be a movie entry that is seen that is owned that is wishlist see that is wishlist own with a user rating of "26" and user comments of "This movie sucks" in the database
     Then I should see: "Your movie entry has been saved"
     Then I go to the index page
+    Then I should see "amy"
     And I should see a movie entry with a user rating of "26" within the library

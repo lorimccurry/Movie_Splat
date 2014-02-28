@@ -9,5 +9,5 @@ Given(/^I'm signed in as "(.*?)"$/) do |username|
   fill_in "Email / Username", with: email
   fill_in "Password", with: "password"
   click_button "Sign in"
-  page.should have_content("Sign in succesfully")
+  page.should have_content("Signed in successfully")
 end
