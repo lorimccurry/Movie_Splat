@@ -5,6 +5,6 @@
     %tr
       %th My Rating
   %tbody
-    %tr
-      - @movie_entry.each do |movie_entry|
+    - @movie_entry.each do |movie_entry|
+      %tr
         %td= movie_entry.user_rating

@@ -7,7 +7,9 @@ RottenTomatoesCapstone::Application.routes.draw do
 
   root:to => 'movie_entries#home'
   # match '/library', to: 'movie_entries#library', via: 'get'
-  resources :movie_entries, only: [:home, :create, :new, :index]
+  resources :movie_entries, only: [:home, :create, :new, :index] do
+    resources :movies, only: [:new, :create]
+  end
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
