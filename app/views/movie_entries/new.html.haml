@@ -1,11 +1,12 @@
 .row
   .small-offset-3.small-9.columns
     %h2.subheader Add a Movie
-  = simple_form_for [@movieentry, @movie] do |f|
+  = simple_form_for @movie_entry do |f|
     .inputs
       .row
         .small-offset-3.small-6.columns
-          = f.input :title, as: :text, label: 'Title'
+          = simple_form_for @movie do |g|
+            = g.input :title, as: :text, label: 'Title'
       .row
         .small-offset-3.small-6.columns
           = f.input :seen, as: :boolean, inline_label: 'Seen'

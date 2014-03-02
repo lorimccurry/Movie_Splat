@@ -34,6 +34,7 @@ group :test, :development do
   gem 'rspec'
   gem 'rspec-rails'
   gem 'spork-rails'
+  gem 'pry'
 end
 
 group :test do

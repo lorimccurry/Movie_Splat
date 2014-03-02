@@ -255,6 +255,7 @@ DEPENDENCIES
   jquery-rails
   launchy
   pg
+  pry
   rails (= 4.0.2)
   rails_12factor
   rspec

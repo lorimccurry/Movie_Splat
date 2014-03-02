@@ -32,12 +32,12 @@ Feature: Create a movie entry
     Then I should see "Add a Movie"
     Then I click "Add a Movie"
     And I should go to the add movie entry page
-    Then I fill in "Title" with "Up"
+    Then I fill in "Title" with "uP"
     Then I fill in "My Rating:" with "92"
     And I press "Save"
     And there should be a movie entry with the title "Up" in the database
     Then I should see: "Your movie entry has been saved"
-    Then I should go to the index page
+    Then I go to the index page
     Then I should see "amy"
     And I should see a movie entry with a title of "Up" within the library
 
@@ -60,6 +60,7 @@ Feature: Create a movie entry
     Then I should see "amy"
     And I should see a movie entry with a user rating of "26" within the library
 
+  @focus
   Scenario: Creating a movie unpopulated succeeds
     Given I'm signed in as "amy"
     When I go to the index page
@@ -67,8 +68,8 @@ Feature: Create a movie entry
     Then I click "Add a Movie"
     And I should go to the add movie entry page
     And I press "Save"
-    And there should be a movie entry that isn't seen that isn't owned that isn't wishlist see that isn't wishlist own with a user rating of "none" and user comments of "none" in the database
+    And there should be a movie entry that isn't seen that isn't owned that isn't wishlist see that isn't wishlist own with no user rating and user comments of "" in the database
     Then I should see: "Your movie entry has been saved"
     Then I go to the index page
     Then I should see "amy"
-    And I should see a movie entry with a user rating of "none" within the library
+    And I should see a movie entry with a user rating of "" within the library

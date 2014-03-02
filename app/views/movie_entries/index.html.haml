@@ -3,8 +3,12 @@
 %table.library
   %thead
     %tr
+      %th Title
+    %tr
       %th My Rating
   %tbody
     - @movie_entry.each do |movie_entry|
+      %tr
+        %td= movie_entry.movie.title
       %tr
         %td= movie_entry.user_rating
