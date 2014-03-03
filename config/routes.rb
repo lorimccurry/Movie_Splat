@@ -7,10 +7,8 @@ RottenTomatoesCapstone::Application.routes.draw do
 
   root:to => 'movie_entries#home'
   resources :movie_entries, only: [:home, :create, :new, :index] do
-    resources :movies, only: [:new, :create]
+    resources :movies, only: [:new, :create, :index]
   end
-
-  resource :movies, only: [:create]
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
