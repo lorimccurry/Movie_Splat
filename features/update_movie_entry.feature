@@ -6,24 +6,30 @@ Feature: Edit a movie entry
 
   Scenario: Update a movie entry
     Given I'm signed in as "amy"
-    Given there should be a movie entry that is seen that is owned that is wishlist see that is wishlist own with a user rating of "26" and user comments of "This movie sucks" in the database
+    Given the following movie:
+      | title | Up |
+    And the following movie entry:
+      | seen          | 1             |
+      | own           | 1             |
+      | wishlist_see  | 1             |
+      | wishlist_own  | 1             |
+      | user_rating   | 89            |
+      | user_comments | Ugly face cry |
+    And that the movie entry has the following title:
+      | movie | Up |
     When I go to the index page
-    Then I should see "Edit" within the id movie_entry_id???
-    Then I click "Edit" within the id movie_entry_id???
-    And I should go to the "Edit Movie" page
-    And I see a movie entry that is seen that is owned that is wishlist see that is wishlist own with a user rating of "26" and user comments of "This movie sucks"
-    Then I uncheck "Seen"
+    Then I should see "Up"
+    Then I follow "Edit"
+    Then I should see "Edit Movie"
+    Then I fill in "Title" with "gravity"
     Then I uncheck "Own"
     Then I uncheck "Wishlist See"
     Then I uncheck "Wishlist Own"
-    Then I fill in "My Rating:" with ""
-    Then I fill in "My Comments:" with ""
+    Then I fill in "My Rating:" with "78"
+    Then I fill in "My Comments:" with "Suspend disbelief"
     And I press "Save"
-    And there should be a movie entry that isn't seen that isn't owned that isn't wishlist see that isn't wishlist own with a user rating of "0" and user comments of "" in the database
+    And there should be a movie entry with a title of "Gravity" that isn't seen that isn't owned that isn't wishlist see that isn't wishlist own with a user rating of "78" and user comments of "Suspend disbelief" in the database
     Then I should see: "Your update has been saved"
     Then I go to the index page
     Then I should see "amy"
-    And I should see a movie entry with a user rating of "none" within the library
-
-
-
+    And I should see a movie entry with a title of "Gravity" and a user rating of "78" within the library

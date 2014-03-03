@@ -1,3 +1,4 @@
+@wip
 Feature: Create a movie entry
   As a movie tracker
   In order to create a library of my movies
@@ -44,14 +45,14 @@ Feature: Create a movie entry
     Then I check "Own"
     Then I check "Wishlist See"
     Then I check "Wishlist Own"
-    Then I fill in "My Rating:" with "26"
-    Then I fill in "My Comments:" with "This movie sucks"
+    Then I fill in "My Rating:" with "76"
+    Then I fill in "My Comments:" with "Classic"
     And I press "Save"
-    And there should be a movie entry that is seen that is owned that is wishlist see that is wishlist own with a user rating of "26" and user comments of "This movie sucks" in the database
+    And there should be a movie entry with a title of "It's a Wonderful Life" that is seen that is owned that is wishlist see that is wishlist own with a user rating of "76" and user comments of "This movie sucks" in the database
     Then I should see: "Your movie entry has been saved"
     Then I go to the index page
     Then I should see "amy"
-    And I should see a movie entry with a user rating of "26" within the library
+    And I should see a movie entry with a title of "It's a Wonderful Life" and a user rating of "76" within the library
 
   Scenario: Creating a movie unpopulated succeeds
     Given I'm signed in as "amy"
@@ -61,8 +62,8 @@ Feature: Create a movie entry
     And I should go to the add movie entry page
     Then I fill in "Title" with "american hustle"
     And I press "Save"
-    And there should be a movie entry that isn't seen that isn't owned that isn't wishlist see that isn't wishlist own with no user rating and user comments of "" in the database
+    And there should be a movie entry with a title of "American Hustle" that isn't seen that isn't owned that isn't wishlist see that isn't wishlist own with no user rating and user comments of "" in the database
     Then I should see: "Your movie entry has been saved"
     Then I go to the index page
     Then I should see "amy"
-    And I should see a movie entry with a user rating of "" within the library
+    And I should see a movie entry with a title of "American Hustle" and a user rating of "" within the library

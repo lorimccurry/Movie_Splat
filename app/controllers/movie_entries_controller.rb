@@ -35,4 +35,7 @@ private
   def movie_params
     params.require(:movie).permit(:title)
   end
+
+  def find_movie
+  end
 end
