@@ -1,3 +1,0 @@
-# Given(/^the movie entry with a title of "(.*?)" that is seen "(.*?)" that is owned "(.*?)" that is wishlist see "(.*?)" that is wishlist owned "(.*?)" that has a user rating of "(.*?)" and user comments of "(.*?)"$/) do |title, seen, own, wishlist_see, wishlist_own, user_rating, user_comments|
-  # Fabricate(:movie_entry, title: title, seen: seen, own: own, wishlist_see: wishlist_see, wishlist_own: wishlist_own, user_rating: user_rating, user_comments: user_comments)
-# end
