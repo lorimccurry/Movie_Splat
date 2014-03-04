@@ -1,4 +1,3 @@
-Fabricator(:movie) do
-  title
-  Fabrication::Transform.define(:movie, lambda { |title| Movie.find_by_title(title) })
+Fabricator(:movie, aliases: ["Up"]) do
+  title "Up"
 end
