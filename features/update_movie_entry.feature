@@ -6,7 +6,11 @@ Feature: Edit a movie entry
 
   Scenario: Update a movie entry
     Given I'm signed in as "amy"
-    And that the movie entry for the movie "Up":
+    And the movie "Up":
+    And the following movie entries:
+      | movie | user | seen | own  | wishlist_see | wishlist_own | user_rating | user_comments |
+      | Up    | amy  | true | true | true         | true         | 90          | It's good     |
+
     When I go to the index page
     Then I should see "Up"
     Then I follow "Edit"
