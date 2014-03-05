@@ -52,7 +52,7 @@ Given(/^that the movie entry for the movie "(.*?)":$/) do |movie_title|
   Fabricate(movie_title)
 end
 
-Given(/^the movie "(.*?)":$/) do |movie_title|
+Given(/^the movie "(.*?)"$/) do |movie_title|
   Fabricate(movie_title)
 end
 

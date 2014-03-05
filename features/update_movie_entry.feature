@@ -7,15 +7,9 @@ Feature: Edit a movie entry
   Scenario: Update a movie entry
     Given I'm signed in as "amy"
     And the movie "Up"
-    And the following movie entry:
-      | movie         | Up            |
-      | user          | amy           |
-      | seen          | 1             |
-      | own           | 1             |
-      | wishlist_see  | 1             |
-      | wishlist_own  | 1             |
-      | user_rating   | 89            |
-      | user_comments | Ugly face cry |
+    And the following movie entries:
+      | movie | user | seen | own  | wishlist_see | wishlist_own | user_rating | user_comments |
+      | Up    | amy  | true | true | true         | true         | 90          | It's good     |
 
     When I go to the index page
     Then I should see "Up"
