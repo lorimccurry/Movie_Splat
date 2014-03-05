@@ -4,11 +4,10 @@
   %thead
     %tr
       %th Title
-    %tr
       %th My Rating
   %tbody
     - @movie_entries.each do |movie_entry|
       %tr
         %td= movie_entry.movie.title
-      %tr
         %td= movie_entry.user_rating
+        %td= link_to "Edit", edit_movie_entry_path(id: movie_entry.id), class: 'button tiny radius'
