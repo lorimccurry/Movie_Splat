@@ -1,4 +1,3 @@
-@wip
 Feature: Create a movie entry
   As a movie tracker
   In order to create a library of my movies
