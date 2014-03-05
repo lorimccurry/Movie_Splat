@@ -1,11 +1,11 @@
-Fabricator(:movie_entry) do
-  title(fabricator: :movie)
-  seen
-  own
-  wishlist_see
-  wishlist_own
-  user_rating
-  user_comments
+Fabricator(:movie_entry, alias: [:movie_entry_up]) do
+  seen true
+  own true
+  wishlist_see true
+  wishlist_own true
+  user_rating 90
+  user_comments "I liked it"
 
-  Fabrication::Transform.define(:movie, lambda { |title| Movie.find_by_title(title) })
+  user { Fabricate(:amy) }
+  movie { Fabricate("Up") }
 end
