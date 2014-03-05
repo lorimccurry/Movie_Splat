@@ -47,3 +47,7 @@ Then(/^I should see a movie entry with a title of "(.*?)" within the library$/) 
     page.should have_content(title)
   end
 end
+
+Given(/^that the movie entry for the movie "(.*?)":$/) do |movie_title|
+  Fabricate(movie_title)
+end
