@@ -51,3 +51,15 @@ end
 Given(/^that the movie entry for the movie "(.*?)":$/) do |movie_title|
   Fabricate(movie_title)
 end
+
+Given(/^the movie "(.*?)":$/) do |movie_title|
+  Fabricate(movie_title)
+end
+
+Given(/^the following movie entries:$/) do |movie_entries|
+  movie_entries.hashes.each do |movie_entry|
+    movie = Movie.find_by(title: movie_entry.fetch("movie"))
+    user = User.find_by(username: movie_entry.fetch("user"))
+    MovieEntry.create(movie_entry.merge({user: user, movie: movie}))
+  end
+end

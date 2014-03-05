@@ -6,17 +6,17 @@ Feature: Edit a movie entry
 
   Scenario: Update a movie entry
     Given I'm signed in as "amy"
-    Given the following movie:
-      | title | Up |
+    And the movie "Up"
     And the following movie entry:
+      | movie         | Up            |
+      | user          | amy           |
       | seen          | 1             |
       | own           | 1             |
       | wishlist_see  | 1             |
       | wishlist_own  | 1             |
       | user_rating   | 89            |
       | user_comments | Ugly face cry |
-    And that the movie entry has the following title:
-      | movie | Up |
+
     When I go to the index page
     Then I should see "Up"
     Then I follow "Edit"
