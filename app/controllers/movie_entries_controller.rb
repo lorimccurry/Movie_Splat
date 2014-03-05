@@ -26,6 +26,26 @@ class MovieEntriesController < ApplicationController
     @movie = Movie.new
   end
 
+  def edit
+    @movie_entry = MovieEntry.find(params[:id])
+    @movie = Movie.find(params[:id])
+  end
+
+  def update
+    movie_entry = current_user.movie_entry.find(params[:id])
+    movie = Movie.find_or_create_by_title(movie_params[:title].downcase.titleize)
+    movie_entry.movie = movie
+    # movie_entry.save
+    if movie_entry.update_attributes(movie_entry_params)
+      flash[:notice] = "Your update has been saved"
+      redirect_to movie_entries_path
+      #might need to redirect_to movie_entry_path (the show), id: => movie_entry.id
+    else
+      flash[:alert] = "Your movie entry has not been saved. #{@movie_entry.errors.full_messages.join(". ")}"
+      render edit_movie_entry_path
+    end
+  end
+
 private
   def movie_entry_params
     params.require(:movie_entry).permit(:seen, :own, :wishlist_see, :wishlist_own, :user_rating, :user_comments)
