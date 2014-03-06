@@ -28,14 +28,13 @@ class MovieEntriesController < ApplicationController
 
   def edit
     @movie_entry = MovieEntry.find(params[:id])
-    @movie = Movie.find(params[:id])
+    @movie = @movie_entry.movie
   end
 
   def update
-    movie_entry = current_user.movie_entry.find(params[:id])
+    movie_entry = MovieEntry.find(params[:id])
     movie = Movie.find_or_create_by_title(movie_params[:title].downcase.titleize)
     movie_entry.movie = movie
-    # movie_entry.save
     if movie_entry.update_attributes(movie_entry_params)
       flash[:notice] = "Your update has been saved"
       redirect_to movie_entries_path
