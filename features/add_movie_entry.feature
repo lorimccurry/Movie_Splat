@@ -30,9 +30,9 @@ Feature: Create a movie entry
     Then I should see: "Your movie entry has been saved"
     Then I go to the index page
     Then I should see "amy"
-    And I should see a movie entry with a title of "Up" and a user rating of "" within the library
+    And I should see a movie entry with a title of "Up" within the library
+    And I should see a movie entry with a user rating of "" within the library
 
-@focus
   Scenario: Creating a movie entry fully populated succeeds
     Given I'm signed in as "amy"
     When I go to the index page
@@ -47,11 +47,18 @@ Feature: Create a movie entry
     Then I fill in "My Rating:" with "85"
     Then I fill in "My Comments:" with "Classic"
     And I press "Save"
-    And there should be a movie entry with a title of "It's a Wonderful Life" that is seen that is owned that is wishlist see that is wishlist own with a user rating of "85" and user comments of "Classic" in the database
+    And there should be a movie entry with a title of "It's A Wonderful Life" in the database
+    And there should be a movie entry with seen "1" in the database
+    And there should be a movie entry with owned "1" in the database
+    And there should be a movie entry with wishlist see "1" in the database
+    And there should be a movie entry with wishlist own "1" in the database
+    And there should be a movie entry with a user rating of "85" in the database
+    And there should be a movie entry with a user comments of "Classic" in the database
     Then I should see: "Your movie entry has been saved"
     Then I go to the index page
     Then I should see "amy"
-    And I should see a movie entry with a title of "It's a Wonderful Life" and a user rating of "85" within the library
+    And I should see a movie entry with a title of "It's A Wonderful Life" within the library
+    And I should see a movie entry with a user rating of "85" within the library
 
   Scenario: Creating a movie unpopulated succeeds
     Given I'm signed in as "amy"
@@ -61,8 +68,15 @@ Feature: Create a movie entry
     And I should go to the add movie entry page
     Then I fill in "Title" with "american hustle"
     And I press "Save"
-    And there should be a movie entry with a title of "American Hustle" that isn't seen that isn't owned that isn't wishlist see that isn't wishlist own with a user rating of "" and user comments of "" in the database
+    And there should be a movie entry with a title of "American Hustle" in the database
+    And there should be a movie entry with seen "0" in the database
+    And there should be a movie entry with owned "0" in the database
+    And there should be a movie entry with wishlist see "0" in the database
+    And there should be a movie entry with wishlist own "0" in the database
+    And there should be a movie entry with a user rating of "" in the database
+    And there should be a movie entry with a user comments of "" in the database
     Then I should see: "Your movie entry has been saved"
     Then I go to the index page
     Then I should see "amy"
-    And I should see a movie entry with a title of "American Hustle" and a user rating of "" within the library
+    And I should see a movie entry with a title of "American Hustle" within the library
+    And I should see a movie entry with a user rating of "" within the library

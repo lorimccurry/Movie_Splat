@@ -22,8 +22,15 @@ Feature: Edit a movie entry
     Then I fill in "My Rating:" with "78"
     Then I fill in "My Comments:" with "Suspend disbelief"
     And I press "Save"
-    And there should be a movie entry with a title of "Gravity" that isn't seen that isn't owned that isn't wishlist see that isn't wishlist own with a user rating of "78" and user comments of "Suspend disbelief" in the database
+    And there should be a movie entry with a title of "Gravity" in the database
+    And there should be a movie entry with seen "1" in the database
+    And there should be a movie entry with owned "0" in the database
+    And there should be a movie entry with wishlist see "0" in the database
+    And there should be a movie entry with wishlist own "0" in the database
+    And there should be a movie entry with a user rating of "78" in the database
+    And there should be a movie entry with a user comments of "Suspend disbelief" in the database
     Then I should see: "Your update has been saved"
     Then I go to the index page
     Then I should see "amy"
-    And I should see a movie entry with a title of "Gravity" and a user rating of "78" within the library
+    And I should see a movie entry with a title of "Gravity" within the library
+    And I should see a movie entry with a user rating of "78" within the library
