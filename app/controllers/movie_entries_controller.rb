@@ -45,6 +45,12 @@ class MovieEntriesController < ApplicationController
     end
   end
 
+  def destroy
+    movie_entry = MovieEntry.find(params[:id]).destroy
+    flash[:notice] = "Your movie has been deleted"
+    redirect_to movie_entries_path
+  end
+
 private
   def movie_entry_params
     params.require(:movie_entry).permit(:seen, :own, :wishlist_see, :wishlist_own, :user_rating, :user_comments)

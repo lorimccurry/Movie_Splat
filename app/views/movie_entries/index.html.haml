@@ -11,3 +11,4 @@
         %td= movie_entry.movie.title
         %td= movie_entry.user_rating
         %td= link_to "Edit", edit_movie_entry_path(id: movie_entry.id), class: 'button tiny radius'
+        %td= button_to("Delete", movie_entry_path(movie_entry), method: :delete, data: {id: movie_entry.id}, class: 'button tiny radius')

@@ -41,3 +41,11 @@ end
 Then(/^I should see a movie entry with a user rating of "(.*?)" within the library$/) do |rating|
   page.should have_content(rating)
 end
+
+Then(/^I should not see a movie entry with a title of "(.*?)" within the library$/) do |title|
+  page.should_not have_content(title)
+end
+
+Then(/^I should not see a movie entry with a user rating of "(.*?)" within the library$/) do |rating|
+  page.should_not have_content(rating)
+end
