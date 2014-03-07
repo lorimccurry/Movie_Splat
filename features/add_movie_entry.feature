@@ -47,7 +47,7 @@ Feature: Create a movie entry
     Then I fill in "My Rating:" with "85"
     Then I fill in "My Comments:" with "Classic"
     And I press "Save"
-    And there should be a movie entry with a title of "It's A Wonderful Life" in the database
+    And there should be a movie entry with a title of "It's a Wonderful Life" in the database
     And there should be a movie entry with seen "1" in the database
     And there should be a movie entry with owned "1" in the database
     And there should be a movie entry with wishlist see "1" in the database
@@ -57,7 +57,7 @@ Feature: Create a movie entry
     Then I should see: "Your movie entry has been saved"
     Then I go to the index page
     Then I should see "amy"
-    And I should see a movie entry with a title of "It's A Wonderful Life" within the library
+    And I should see a movie entry with a title of "It's a Wonderful Life" within the library
     And I should see a movie entry with a user rating of "85" within the library
 
   Scenario: Creating a movie unpopulated succeeds

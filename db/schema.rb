@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140227162502) do
+ActiveRecord::Schema.define(version: 20140307231232) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -47,7 +47,7 @@ ActiveRecord::Schema.define(version: 20140227162502) do
     t.integer  "tomato_meter"
     t.string   "tomato_image"
     t.integer  "tomato_user_meter"
-    t.string   "DVD"
+    t.string   "dvd"
     t.string   "box_office"
     t.string   "production"
     t.integer  "tomato_reviews"
