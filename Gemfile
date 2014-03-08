@@ -36,8 +36,6 @@ group :test, :development do
   gem 'rspec'
   gem 'rspec-rails'
   gem 'spork-rails'
-  gem 'vcr'
-  gem 'webmock'
 end
 
 group :test do
@@ -46,4 +44,6 @@ group :test do
   gem 'growl'
   gem 'launchy'
   gem 'selenium-webdriver'
+  gem 'vcr'
+  gem 'webmock'
 end
