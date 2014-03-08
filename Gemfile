@@ -32,10 +32,12 @@ group :test, :development do
   gem 'fabrication'
   gem 'guard-rspec'
   gem 'guard-spork'
+  gem 'pry'
   gem 'rspec'
   gem 'rspec-rails'
   gem 'spork-rails'
-  gem 'pry'
+  gem 'vcr'
+  gem 'webmock'
 end
 
 group :test do
