@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140307231232) do
+ActiveRecord::Schema.define(version: 20140308195714) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -53,7 +53,7 @@ ActiveRecord::Schema.define(version: 20140307231232) do
     t.integer  "tomato_reviews"
     t.integer  "tomato_fresh"
     t.integer  "tomato_rotten"
-    t.integer  "tomato_user_reviews"
+    t.string   "tomato_user_reviews"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
