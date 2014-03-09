@@ -21,7 +21,7 @@ Feature: Edit a movie entry
     Then I uncheck "Wishlist Own"
     Then I fill in "My Rating:" with "78"
     Then I fill in "My Comments:" with "Suspend disbelief"
-    And I press "Save"
+    And I select "Save" for the movie "gravity"
     And there should be a movie entry with a title of "Gravity" in the database
     And there should be a movie entry with seen "1" in the database
     And there should be a movie entry with owned "0" in the database

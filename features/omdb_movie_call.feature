@@ -11,7 +11,7 @@ Feature: API call to OMDB for movie info
     Then I click "Add a Movie"
     And I should go to the add movie entry page
     Then I fill in "Title" with "uP"
-    And I press "Save" for the movie "Up"
+    And I select "Save" for the movie "Up"
     And there should be a movie with the "title" "Up" in the database
     And there should be a movie with the "year" "2009" in the database
     And there should be a movie with the "rated" "PG" in the database

@@ -14,11 +14,11 @@ When(/^I fill in "(.*?)" for "(.*?)"$/) do |content, field|
   fill_in(field, with: content)
 end
 
-# When(/^I press "(.*?)"$/) do |text|
-#   click_button(text)
-# end
+When(/^I press "(.*?)"$/) do |text|
+  click_button(text)
+end
 
-And(/^I press "(.*?)" for the movie "(.*?)"$/) do |text, movie_title|
+And(/^I select "(.*?)" for the movie "(.*?)"$/) do |text, movie_title|
   VCR.use_cassette "movie/#{movie_title}" do
     click_button(text)
   end
