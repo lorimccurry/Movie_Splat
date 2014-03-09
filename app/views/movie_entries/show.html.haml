@@ -1,9 +1,9 @@
 .row
-  .small-6.columns
+  .small-5.columns
     .poster_show
       =image_tag "#{@movie_entry.movie.poster}", :id => 'image_show'
-  .small-offset-6.small-6.columns
-    .text_box
+  .small-7.columns
+    .text_show
       %h1.subheader.title "#{@movie_entry.movie.title}"
       %span#year_show #{@movie_entry.movie.year}
       %span#rated_show #{@movie_entry.movie.rated}
