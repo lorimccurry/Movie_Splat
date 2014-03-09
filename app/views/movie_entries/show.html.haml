@@ -4,12 +4,12 @@
       =image_tag "#{@movie_entry.movie.poster}", :id => 'image_show'
   .small-7.columns
     .text_show
-      %h1.subheader#title_show "#{@movie_entry.movie.title}"
+      %h1.subheader#title_show #{@movie_entry.movie.title}
       %span#year_show #{@movie_entry.movie.year}
       %span#rated_show #{@movie_entry.movie.rated}
       %span#runtime_show #{@movie_entry.movie.runtime}
       %p#plot_show #{@movie_entry.movie.plot}
-      %dl
+      %dl#show_data
         %dt Actors:
         %dd #{@movie_entry.movie.actors}
         %dt Theater Release:
