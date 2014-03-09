@@ -32,10 +32,10 @@ group :test, :development do
   gem 'fabrication'
   gem 'guard-rspec'
   gem 'guard-spork'
+  gem 'pry'
   gem 'rspec'
   gem 'rspec-rails'
   gem 'spork-rails'
-  gem 'pry'
 end
 
 group :test do
@@ -44,4 +44,6 @@ group :test do
   gem 'growl'
   gem 'launchy'
   gem 'selenium-webdriver'
+  gem 'vcr'
+  gem 'webmock'
 end

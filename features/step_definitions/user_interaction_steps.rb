@@ -18,12 +18,22 @@ When(/^I press "(.*?)"$/) do |text|
   click_button(text)
 end
 
+And(/^I select "(.*?)" for the movie "(.*?)"$/) do |text, movie_title|
+  VCR.use_cassette "movie/#{movie_title}" do
+    click_button(text)
+  end
+end
+
 Then(/^I should see(?::)? "(.*?)"$/) do |text|
   page.should have_content(text)
 end
 
 Then(/^I should not see "(.*?)"$/) do |text|
   page.should_not have_content(text)
+end
+
+Then(/^I should view the image "(.*?)"$/) do |image_path|
+  page.should have_xpath("//img[contains(@src, \"#{image_path}\")]")
 end
 
 Given(/^I am on the sign in page$/) do

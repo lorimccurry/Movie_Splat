@@ -25,7 +25,7 @@ Feature: Create a movie entry
     Then I click "Add a Movie"
     And I should go to the add movie entry page
     Then I fill in "Title" with "uP"
-    And I press "Save"
+    And I select "Save" for the movie "Up"
     And there should be a movie entry with the title "Up" in the database
     Then I should see: "Your movie entry has been saved"
     Then I go to the index page
@@ -46,7 +46,7 @@ Feature: Create a movie entry
     Then I check "Wishlist Own"
     Then I fill in "My Rating:" with "85"
     Then I fill in "My Comments:" with "Classic"
-    And I press "Save"
+    And I select "Save" for the movie "it's a wonderful life"
     And there should be a movie entry with a title of "It's a Wonderful Life" in the database
     And there should be a movie entry with seen "1" in the database
     And there should be a movie entry with owned "1" in the database
@@ -67,7 +67,7 @@ Feature: Create a movie entry
     Then I click "Add a Movie"
     And I should go to the add movie entry page
     Then I fill in "Title" with "american hustle"
-    And I press "Save"
+    And I select "Save" for the movie "american hustle"
     And there should be a movie entry with a title of "American Hustle" in the database
     And there should be a movie entry with seen "0" in the database
     And there should be a movie entry with owned "0" in the database

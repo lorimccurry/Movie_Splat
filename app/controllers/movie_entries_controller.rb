@@ -5,7 +5,7 @@ class MovieEntriesController < ApplicationController
   end
 
   def index
-    @movie_entries = MovieEntry.all
+    @movie_entries = current_user.movie_entries.all
   end
 
   def create
@@ -22,17 +22,17 @@ class MovieEntriesController < ApplicationController
   end
 
   def new
-    @movie_entry = MovieEntry.new
+    @movie_entry = current_user.movie_entries.new
     @movie = Movie.new
   end
 
   def edit
-    @movie_entry = MovieEntry.find(params[:id])
+    @movie_entry = current_user.movie_entries.find(params[:id])
     @movie = @movie_entry.movie
   end
 
   def update
-    movie_entry = MovieEntry.find(params[:id])
+    movie_entry = current_user.movie_entries.find(params[:id])
     movie = Movie.find_or_create_by_title(movie_params[:title].downcase.titleize)
     movie_entry.movie = movie
     if movie_entry.update_attributes(movie_entry_params)
@@ -46,9 +46,14 @@ class MovieEntriesController < ApplicationController
   end
 
   def destroy
-    movie_entry = MovieEntry.find(params[:id]).destroy
+    movie_entry = current_user.movie_entries.find(params[:id]).destroy
     flash[:notice] = "Your movie has been deleted"
     redirect_to movie_entries_path
+  end
+
+  def show
+    @movie_entry = current_user.movie_entries.find(params[:id])
+    @movie = @movie_entry.movie
   end
 
 private

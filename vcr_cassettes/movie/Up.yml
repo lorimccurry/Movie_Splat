@@ -1,0 +1,57 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://www.omdbapi.com//?t=Up&tomatoes=true
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - '*/*'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - no-cache
+      Pragma:
+      - no-cache
+      Content-Type:
+      - text/html; charset=utf-8
+      Expires:
+      - '-1'
+      Server:
+      - Microsoft-IIS/7.5
+      X-Aspnet-Version:
+      - 4.0.30319
+      X-Powered-By:
+      - ASP.NET
+      Access-Control-Allow-Origin:
+      - '*'
+      Date:
+      - Sat, 08 Mar 2014 16:08:31 GMT
+      Content-Length:
+      - '1391'
+    body:
+      encoding: UTF-8
+      string: '{"Title":"Up","Year":"2009","Rated":"PG","Released":"29 May 2009","Runtime":"96
+        min","Genre":"Animation, Adventure, Drama","Director":"Pete Docter, Bob Peterson","Writer":"Pete
+        Docter (story), Bob Peterson (story), Thomas McCarthy (story), Bob Peterson
+        (screenplay), Pete Docter (screenplay)","Actors":"Edward Asner, Christopher
+        Plummer, Jordan Nagai, Bob Peterson","Plot":"By tying thousands of balloons
+        to his home, 78-year-old Carl sets out to fulfill his lifelong dream to see
+        the wilds of South America. Russell, a wilderness explorer 70 years younger,
+        inadvertently becomes a stowaway.","Language":"English","Country":"USA","Awards":"Won
+        2 Oscars. Another 53 wins & 37 nominations.","Poster":"http://ia.media-imdb.com/images/M/MV5BMTk3NDE2NzI4NF5BMl5BanBnXkFtZTgwNzE1MzEyMTE@._V1_SX300.jpg","Metascore":"88","imdbRating":"8.3","imdbVotes":"417,543","imdbID":"tt1049413","Type":"movie","tomatoMeter":"98","tomatoImage":"certified","tomatoRating":"8.6","tomatoReviews":"278","tomatoFresh":"273","tomatoRotten":"5","tomatoConsensus":"Another
+        masterful work of art from Pixar, Up is an exciting, hilarious, and heartfelt
+        adventure impeccably crafted and told with wit and depth.","tomatoUserMeter":"89","tomatoUserRating":"3.8","tomatoUserReviews":"1,190,300","DVD":"10
+        Nov 2009","BoxOffice":"$293.0M","Production":"Walt Disney Pictures","Website":"http://Disney.com/UP","Response":"True"}'
+    http_version: 
+  recorded_at: Sat, 08 Mar 2014 16:08:37 GMT
+recorded_with: VCR 2.8.0
