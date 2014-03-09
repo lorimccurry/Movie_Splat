@@ -32,6 +32,10 @@ Then(/^I should not see "(.*?)"$/) do |text|
   page.should_not have_content(text)
 end
 
+Then(/^I should view the image "(.*?)"$/) do |image_path|
+  page.should have_xpath("//img[contains(@src, \"#{image_path}\")]")
+end
+
 Given(/^I am on the sign in page$/) do
   visit(user_session_path)
 end

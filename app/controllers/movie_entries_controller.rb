@@ -51,6 +51,11 @@ class MovieEntriesController < ApplicationController
     redirect_to movie_entries_path
   end
 
+  def show
+    @movie_entry = current_user.movie_entries.find(params[:id])
+    @movie = @movie_entry.movie
+  end
+
 private
   def movie_entry_params
     params.require(:movie_entry).permit(:seen, :own, :wishlist_see, :wishlist_own, :user_rating, :user_comments)
