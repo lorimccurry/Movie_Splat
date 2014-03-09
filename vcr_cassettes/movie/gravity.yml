@@ -1,0 +1,73 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://www.omdbapi.com//?t=Gravity&tomatoes=true
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - '*/*'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - no-cache
+      Pragma:
+      - no-cache
+      Content-Type:
+      - text/html; charset=utf-8
+      Expires:
+      - '-1'
+      Server:
+      - Microsoft-IIS/7.5
+      X-Aspnet-Version:
+      - 4.0.30319
+      X-Powered-By:
+      - ASP.NET
+      Access-Control-Allow-Origin:
+      - '*'
+      Date:
+      - Sat, 08 Mar 2014 20:46:57 GMT
+      Content-Length:
+      - '1192'
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJUaXRsZSI6IkdyYXZpdHkiLCJZZWFyIjoiMjAxMyIsIlJhdGVkIjoiUEct
+        MTMiLCJSZWxlYXNlZCI6IjA0IE9jdCAyMDEzIiwiUnVudGltZSI6IjkxIG1p
+        biIsIkdlbnJlIjoiRHJhbWEsIFNjaS1GaSwgVGhyaWxsZXIiLCJEaXJlY3Rv
+        ciI6IkFsZm9uc28gQ3VhcsOzbiIsIldyaXRlciI6IkFsZm9uc28gQ3VhcsOz
+        biwgSm9uw6FzIEN1YXLDs24iLCJBY3RvcnMiOiJTYW5kcmEgQnVsbG9jaywg
+        R2VvcmdlIENsb29uZXksIEVkIEhhcnJpcywgT3J0byBJZ25hdGl1c3NlbiIs
+        IlBsb3QiOiJBIG1lZGljYWwgZW5naW5lZXIgYW5kIGFuIGFzdHJvbmF1dCB3
+        b3JrIHRvZ2V0aGVyIHRvIHN1cnZpdmUgYWZ0ZXIgYW4gYWNjaWRlbnQgbGVh
+        dmVzIHRoZW0gYWRyaWZ0IGluIHNwYWNlLiIsIkxhbmd1YWdlIjoiRW5nbGlz
+        aCwgR3JlZW5sYW5kaWMiLCJDb3VudHJ5IjoiVVNBLCBVSyIsIkF3YXJkcyI6
+        Ik5vbWluYXRlZCBmb3IgMTAgT3NjYXJzLiBBbm90aGVyIDg1IHdpbnMgJiA3
+        NiBub21pbmF0aW9ucy4iLCJQb3N0ZXIiOiJodHRwOi8vaWEubWVkaWEtaW1k
+        Yi5jb20vaW1hZ2VzL00vTVY1Qk5qRTVNell3TXpZeE1GNUJNbDVCYW5Cblhr
+        RnRaVGN3T1RrNE1UazBPUUBALl9WMV9TWDMwMC5qcGciLCJNZXRhc2NvcmUi
+        OiI5NiIsImltZGJSYXRpbmciOiI4LjIiLCJpbWRiVm90ZXMiOiIyNzMsMTEy
+        IiwiaW1kYklEIjoidHQxNDU0NDY4IiwiVHlwZSI6Im1vdmllIiwidG9tYXRv
+        TWV0ZXIiOiI5NyIsInRvbWF0b0ltYWdlIjoiY2VydGlmaWVkIiwidG9tYXRv
+        UmF0aW5nIjoiOSIsInRvbWF0b1Jldmlld3MiOiIyOTkiLCJ0b21hdG9GcmVz
+        aCI6IjI5MCIsInRvbWF0b1JvdHRlbiI6IjkiLCJ0b21hdG9Db25zZW5zdXMi
+        OiJBbGZvbnNvIEN1YXI/bidzIEdyYXZpdHkgaXMgYW4gZWVyaWUsIHRlbnNl
+        IHNjaS1maSB0aHJpbGxlciB0aGF0J3MgbWFzdGVyZnVsbHkgZGlyZWN0ZWQg
+        YW5kIHZpc3VhbGx5IHN0dW5uaW5nLiIsInRvbWF0b1VzZXJNZXRlciI6Ijg0
+        IiwidG9tYXRvVXNlclJhdGluZyI6IjQuMSIsInRvbWF0b1VzZXJSZXZpZXdz
+        IjoiMjMxLDMzOSIsIkRWRCI6IjI1IEZlYiAyMDE0IiwiQm94T2ZmaWNlIjoi
+        JDI2OS4zTSIsIlByb2R1Y3Rpb24iOiJXYXJuZXIgQnJvcy4gUGljdHVyZXMi
+        LCJXZWJzaXRlIjoiaHR0cDovL2dyYXZpdHltb3ZpZS53YXJuZXJicm9zLmNv
+        bS8iLCJSZXNwb25zZSI6IlRydWUifQ==
+    http_version: 
+  recorded_at: Sat, 08 Mar 2014 20:47:04 GMT
+recorded_with: VCR 2.8.0

@@ -1,0 +1,56 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://www.omdbapi.com//?t=It's%20A%20Wonderful%20Life&tomatoes=true
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - '*/*'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - no-cache
+      Pragma:
+      - no-cache
+      Content-Type:
+      - text/html; charset=utf-8
+      Expires:
+      - '-1'
+      Server:
+      - Microsoft-IIS/7.5
+      X-Aspnet-Version:
+      - 4.0.30319
+      X-Powered-By:
+      - ASP.NET
+      Access-Control-Allow-Origin:
+      - '*'
+      Date:
+      - Sat, 08 Mar 2014 20:44:31 GMT
+      Content-Length:
+      - '1286'
+    body:
+      encoding: UTF-8
+      string: '{"Title":"It''s a Wonderful Life","Year":"1946","Rated":"Approved","Released":"07
+        Jan 1947","Runtime":"130 min","Genre":"Drama, Family, Fantasy","Director":"Frank
+        Capra","Writer":"Frances Goodrich (screenplay), Albert Hackett (screenplay),
+        Frank Capra (screenplay), Jo Swerling (additional scenes), Philip Van Doren
+        Stern (story)","Actors":"James Stewart, Donna Reed, Lionel Barrymore, Thomas
+        Mitchell","Plot":"An angel helps a compassionate but despairingly frustrated
+        businessman by showing what life would have been like if he never existed.","Language":"English","Country":"USA","Awards":"Nominated
+        for 5 Oscars. Another 6 wins.","Poster":"http://ia.media-imdb.com/images/M/MV5BMTMzMzY5NDc4M15BMl5BanBnXkFtZTcwMzc4NjIxNw@@._V1_SX300.jpg","Metascore":"N/A","imdbRating":"8.7","imdbVotes":"195,105","imdbID":"tt0038650","Type":"movie","tomatoMeter":"94","tomatoImage":"certified","tomatoRating":"8.8","tomatoReviews":"66","tomatoFresh":"62","tomatoRotten":"4","tomatoConsensus":"The
+        holiday classic to define all holiday classics, It''s a Wonderful Life is
+        one of a handful of films worth an annual viewing.","tomatoUserMeter":"96","tomatoUserRating":"4","tomatoUserReviews":"213,509","DVD":"19
+        Sep 1995","BoxOffice":"N/A","Production":"Liberty Films","Website":"N/A","Response":"True"}'
+    http_version: 
+  recorded_at: Sat, 08 Mar 2014 20:44:37 GMT
+recorded_with: VCR 2.8.0
