@@ -16,9 +16,8 @@ Feature: View a movie entry
     Then I follow "View"
     Then I should see "Up"
     Then I should view the image "http://ia.media-imdb.com/images/M/MV5BMTk3NDE2NzI4NF5BMl5BanBnXkFtZTgwNzE1MzEyMTE@._V1_SX300.jpg"
-    Then I should see "Rated:"
+    Then I should see "2009"
     Then I should see "PG"
-    Then I should see "Runtime:"
     Then I should see "96 min"
     Then I should see "Released:"
     Then I should see "29 May 2009"
@@ -32,7 +31,6 @@ Feature: View a movie entry
     Then I should see "90"
     Then I should see "Actors:"
     Then I should see "Edward Asner, Christopher Plummer, Jordan Nagai, Bob Peterson"
-    Then I should see "Plot:"
     Then I should see "By tying thousands of balloons to his home, 78-year-old Carl sets out to fulfill his lifelong dream to see the wilds of South America. Russell, a wilderness explorer 70 years younger, inadvertently becomes a stowaway."
     Then I click "My Library"
     Then I go to the index page

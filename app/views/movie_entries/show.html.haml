@@ -1,27 +1,27 @@
 .row
-  .small-6.columns.image_box
-    =image_tag "#{@movie_entry.movie.poster}", :id => 'image_show'
-  .small-offset-6.small-6.columns.text_box
-    %h1.subheader.title "#{@movie_entry.movie.title}"
-    %dl
-      %dt Rated:
-      %dd #{@movie_entry.movie.rated}
-      %dt Runtime:
-      %dd #{@movie_entry.movie.runtime}
-      %dt Released:
-      %dd #{@movie_entry.movie.released}
-      %dt Splat Classification:
-      %dd #{@movie_entry.movie.tomato_image}
-      %dt Tomato Critic Meter:
-      %dd #{@movie_entry.movie.tomato_meter}
-      %dt Tomato Critic Meter:
-      %dd #{@movie_entry.movie.tomato_meter}
-      %dt Tomato User Meter:
-      %dd #{@movie_entry.movie.tomato_user_meter}
-      %dt My Rating:
-      %dd #{@movie_entry.user_rating}
-      %dt Actors:
-      %dd #{@movie_entry.movie.actors}
-      %dt Plot:
-      %dd #{@movie_entry.movie.plot}
-    = link_to "My Library", movie_entries_path
+  .small-6.columns
+    .poster_show
+      =image_tag "#{@movie_entry.movie.poster}", :id => 'image_show'
+  .small-offset-6.small-6.columns
+    .text_box
+      %h1.subheader.title "#{@movie_entry.movie.title}"
+      %span#year_show #{@movie_entry.movie.year}
+      %span#rated_show #{@movie_entry.movie.rated}
+      %span#runtime_show #{@movie_entry.movie.runtime}
+      %p#plot_show #{@movie_entry.movie.plot}
+      %dl
+        %dt Actors:
+        %dd #{@movie_entry.movie.actors}
+        %dt Released:
+        %dd #{@movie_entry.movie.released}
+        %dt Splat Classification:
+        %dd #{@movie_entry.movie.tomato_image}
+        %dt Tomato Critic Meter:
+        %dd #{@movie_entry.movie.tomato_meter}
+        %dt Tomato Critic Meter:
+        %dd #{@movie_entry.movie.tomato_meter}
+        %dt Tomato User Meter:
+        %dd #{@movie_entry.movie.tomato_user_meter}
+        %dt My Rating:
+        %dd #{@movie_entry.user_rating}
+      = link_to "My Library", movie_entries_path
