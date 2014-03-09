@@ -56,6 +56,10 @@ class MovieEntriesController < ApplicationController
     @movie = @movie_entry.movie
   end
 
+  def splat
+    @movie_entries = current_user.movie_entries.with_rating
+  end
+
 private
   def movie_entry_params
     params.require(:movie_entry).permit(:seen, :own, :wishlist_see, :wishlist_own, :user_rating, :user_comments)

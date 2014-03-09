@@ -1,5 +1,6 @@
 = link_to "Add a Movie", new_movie_entry_path
 %p= current_user.username
+%span= link_to "Splat mE", splat_path, class: 'button tiny radius alert'
 %table.library
   %thead
     %tr
