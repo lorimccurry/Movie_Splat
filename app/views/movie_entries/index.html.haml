@@ -1,5 +1,6 @@
 = link_to "Add a Movie", new_movie_entry_path, class: 'button radius success'
 %p= current_user.username
+%span= link_to "All Movies", movie_entries_path, class: 'button radius success', id: 'all_btn'
 %span= link_to "Seen", movie_entries_path(seen: true), class: 'button radius success', id: 'seen_btn'
 %span= link_to "Own", movie_entries_path(own: true), class: 'button radius success', id: 'own_btn'
 %span= link_to "Wishlist See", movie_entries_path(wishlist_see: true), class: 'button radius success', id: 'wish_see_btn'
