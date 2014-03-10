@@ -1,5 +1,8 @@
 %p= current_user.username
 .row
+  .small-12.columns
+    %h1.subheader My Movies
+.row
   .small-2.columns
     = link_to "All Movies", movie_entries_path, class: 'button radius success', id: 'all_btn'
   .small-2.columns
@@ -20,12 +23,20 @@
     %table.library
       %thead
         %tr
+          %th
           %th Title
+          %th Year
+          %th Rated
+          %th Fresh Status
           %th My Rating
       %tbody
         - @movie_entries.each do |movie_entry|
           %tr
+            %td=image_tag movie_entry.movie.poster
             %td= movie_entry.movie.title
+            %td= movie_entry.movie.year
+            %td= movie_entry.movie.rated
+            %td= movie_entry.movie.tomato_image
             %td= movie_entry.user_rating
             %td= link_to "View", movie_entry_path(id: movie_entry.id), class: 'button tiny radius'
             %td= link_to "Edit", edit_movie_entry_path(id: movie_entry.id), class: 'button tiny radius'
