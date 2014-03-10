@@ -17,7 +17,7 @@ class MovieEntry < ActiveRecord::Base
     order("avg(abs(movie.tomato_meter - movie_entries.user_rating)) desc")
   }
   scope :filtered_multi, -> (params) {
-    q = scoped
+    q = all
     if params.has_key?(:seen)
       q = q.where(seen: true)
     end
@@ -26,6 +26,9 @@ class MovieEntry < ActiveRecord::Base
     end
     if params.has_key?(:wishlist_see)
       q = q.where(wishlist_see: true)
+    end
+    if params.has_key?(:wishlist_own)
+      q = q.where(wishlist_own: true)
     end
     q
   }
