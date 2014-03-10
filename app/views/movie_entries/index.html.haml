@@ -1,21 +1,32 @@
-= link_to "Add a Movie", new_movie_entry_path, class: 'button radius success'
 %p= current_user.username
-%span= link_to "All Movies", movie_entries_path, class: 'button radius success', id: 'all_btn'
-%span= link_to "Seen", movie_entries_path(seen: true), class: 'button radius success', id: 'seen_btn'
-%span= link_to "Own", movie_entries_path(own: true), class: 'button radius success', id: 'own_btn'
-%span= link_to "Wishlist See", movie_entries_path(wishlist_see: true), class: 'button radius success', id: 'wish_see_btn'
-%span= link_to "Wishlist Own", movie_entries_path(wishlist_own: true), class: 'button radius success', id: 'wish_own_btn'
-%span= link_to "Splat mE", splat_path, class: 'button radius alert'
-%table.library
-  %thead
-    %tr
-      %th Title
-      %th My Rating
-  %tbody
-    - @movie_entries.each do |movie_entry|
-      %tr
-        %td= movie_entry.movie.title
-        %td= movie_entry.user_rating
-        %td= link_to "View", movie_entry_path(id: movie_entry.id), class: 'button tiny radius'
-        %td= link_to "Edit", edit_movie_entry_path(id: movie_entry.id), class: 'button tiny radius'
-        %td= button_to("Delete", movie_entry_path(movie_entry), method: :delete, data: {id: movie_entry.id}, class: 'button tiny radius')
+.row
+  .small-2.columns
+    = link_to "All Movies", movie_entries_path, class: 'button radius success', id: 'all_btn'
+  .small-2.columns
+    = link_to "Seen", movie_entries_path(seen: true), class: 'button radius success', id: 'seen_btn'
+  .small-2.columns
+    = link_to "Own", movie_entries_path(own: true), class: 'button radius success', id: 'own_btn'
+  .small-2.columns
+    = link_to "Wishlist See", movie_entries_path(wishlist_see: true), class: 'button radius success', id: 'wish_see_btn'
+  .small-2.columns
+    = link_to "Wishlist Own", movie_entries_path(wishlist_own: true), class: 'button radius success', id: 'wish_own_btn'
+  .small-2.columns
+    = link_to "Add a Movie", new_movie_entry_path, class: 'button radius success', id: 'add_btn'
+.row
+  .small-offset-10.small-2.columns
+    = link_to "Splat mE", splat_path, class: 'button radius alert', id: 'splat_btn'
+.row
+  .small-12.columns
+    %table.library
+      %thead
+        %tr
+          %th Title
+          %th My Rating
+      %tbody
+        - @movie_entries.each do |movie_entry|
+          %tr
+            %td= movie_entry.movie.title
+            %td= movie_entry.user_rating
+            %td= link_to "View", movie_entry_path(id: movie_entry.id), class: 'button tiny radius'
+            %td= link_to "Edit", edit_movie_entry_path(id: movie_entry.id), class: 'button tiny radius'
+            %td= button_to("Delete", movie_entry_path(movie_entry), method: :delete, data: {id: movie_entry.id}, class: 'button tiny radius')
