@@ -6,10 +6,10 @@ RottenTomatoesCapstone::Application.routes.draw do
   # You can have the root of your site routed with "root"
 
   root:to => 'movie_entries#home'
-  resources :movie_entries, only: [:home, :create, :new, :index, :show, :edit, :update, :destroy] do
-    resources :movies, only: [:new, :create, :index]
-  end
+  resources :movie_entries, only: [:home, :create, :new, :index, :show, :edit, :update, :destroy]
+  resources :movies, only: [:new, :create, :index]
 
+  match '/splat', to: 'movie_entries#splat', via: 'get'
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

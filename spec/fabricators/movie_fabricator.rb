@@ -16,7 +16,7 @@ Fabricator(:movie, aliases: ["Up"]) do
   dvd "10 Nov 2009"
   box_office "$293.0M"
   production "Walt Disney Pictures"
-  "tomato_reviews" "278"
+  tomato_reviews "278"
   tomato_fresh "273"
   tomato_rotten "5"
   tomato_user_reviews "1,190,300"

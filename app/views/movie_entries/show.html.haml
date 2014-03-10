@@ -4,24 +4,26 @@
       =image_tag "#{@movie_entry.movie.poster}", :id => 'image_show'
   .small-7.columns
     .text_show
-      %h1.subheader.title "#{@movie_entry.movie.title}"
+      %h1.subheader#title_show #{@movie_entry.movie.title}
       %span#year_show #{@movie_entry.movie.year}
       %span#rated_show #{@movie_entry.movie.rated}
       %span#runtime_show #{@movie_entry.movie.runtime}
       %p#plot_show #{@movie_entry.movie.plot}
-      %dl
+      %dl#show_data
         %dt Actors:
         %dd #{@movie_entry.movie.actors}
-        %dt Released:
+        %dt Theater Release:
         %dd #{@movie_entry.movie.released}
+        %dt DVD Release:
+        %dd #{@movie_entry.movie.dvd}
         %dt Splat Classification:
         %dd #{@movie_entry.movie.tomato_image}
         %dt Tomato Critic Meter:
         %dd #{@movie_entry.movie.tomato_meter}
-        %dt Tomato Critic Meter:
-        %dd #{@movie_entry.movie.tomato_meter}
-        %dt Tomato User Meter:
+        %dt Tomato Audience Meter:
         %dd #{@movie_entry.movie.tomato_user_meter}
         %dt My Rating:
         %dd #{@movie_entry.user_rating}
+        %dt My Comments:
+        %dd #{@movie_entry.user_comments}
       = link_to "My Library", movie_entries_path
