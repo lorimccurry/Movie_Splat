@@ -21,6 +21,9 @@ class MovieEntry < ActiveRecord::Base
     if params.has_key?(:seen)
       q = q.where(seen: true)
     end
+    if params.has_key?(:own)
+      q = q.where(own: true)
+    end
     q
   }
 end
