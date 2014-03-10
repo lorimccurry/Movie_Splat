@@ -5,7 +5,7 @@ class MovieEntriesController < ApplicationController
   end
 
   def index
-    @movie_entries = current_user.movie_entries.all
+    @movie_entries = current_user.movie_entries.filtered_multi(params)
   end
 
   def create
@@ -57,7 +57,7 @@ class MovieEntriesController < ApplicationController
   end
 
   def splat
-    @movie_entries = current_user.movie_entries.with_rating
+    @movie_entries = current_user.movie_entries
   end
 
 private

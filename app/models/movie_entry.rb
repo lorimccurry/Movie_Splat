@@ -8,12 +8,19 @@ class MovieEntry < ActiveRecord::Base
       LEFT JOIN movie_entries
       ON movies.id = movie_entries.movie_id
       AND movie_entries.user_rating != 'null'
-    })}
+    }).
     select(%{
            movies.id, movies.title, movies.tomato_meter,
                      avg(abs(movies.tomato_meter - movie_entries.user_rating)) rating
     }).
     group("movies.id, movies.title, movies.tomato_meter").
     order("avg(abs(movie.tomato_meter - movie_entries.user_rating)) desc")
+  }
+  scope :filtered_multi, -> (params) {
+    q = scoped
+    if params.has_key?(:seen)
+      q = q.where(seen: true)
+    end
+    q
   }
 end
