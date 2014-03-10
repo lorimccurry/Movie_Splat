@@ -24,6 +24,9 @@ class MovieEntry < ActiveRecord::Base
     if params.has_key?(:own)
       q = q.where(own: true)
     end
+    if params.has_key?(:wishlist_see)
+      q = q.where(wishlist_see: true)
+    end
     q
   }
 end
