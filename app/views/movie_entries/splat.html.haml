@@ -16,3 +16,9 @@
             %td= movie_entry.movie.title
             %td= movie_entry.user_rating
             %td= movie_entry.movie.tomato_meter
+            %td= movie_entry['rating']
+        %tr
+          %td= 'Average Totals:'
+          %td= @user_rating_avg
+          %td= @critic_rating_avg
+          %td= @rating_diff_avg

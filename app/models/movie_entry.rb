@@ -8,9 +8,8 @@ class MovieEntry < ActiveRecord::Base
       LEFT JOIN movies
       ON movie_entries.movie_id = movies.id
     })
-    .
-    where.not(user_rating: 'null')
-.select(%{
+    .where.not(user_rating: 'null')
+    .select(%{
           movie_entries.*, movies.tomato_meter, movies.title,
             abs(movies.tomato_meter - movie_entries.user_rating) rating
     })

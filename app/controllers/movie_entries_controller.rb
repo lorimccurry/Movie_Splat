@@ -59,8 +59,21 @@ class MovieEntriesController < ApplicationController
   end
 
   def splat
-    movie_entries = current_user.movie_entries.with_rating
-    # binding.pry
+    @movie_entries = current_user.movie_entries.with_rating
+
+    @user_rating_avg = @movie_entries.average('user_rating').to_i
+    @critic_rating_avg = @movie_entries.average('tomato_meter').to_i
+    @rating_diff_avg = (@user_rating_avg - @critic_rating_avg).abs
+
+    # @rating_diff_avg = @movie_entries.average("['rating']").to_i
+
+    if @rating_diff_avg < 15
+      flash[:notice] = "Fresh! Quit your day job and move to Hollywood. Your average critic rating difference is #{@rating_diff_avg}."
+    elsif @rating_diff_avg > 15 && @rating_diff_avg < 40
+      flash[:alert] = "Ripening! Eat more popcorn. Your average critic rating difference is #{@rating_diff_avg}."
+    elsif @rating_diff_avg >= 40
+      flash[:alert] = "Splat! Your taste sucks. Your average critic rating difference is #{@rating_diff_avg}."
+    end
   end
 
 private
