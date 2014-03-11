@@ -59,7 +59,8 @@ class MovieEntriesController < ApplicationController
   end
 
   def splat
-    @movie_entries = current_user.movie_entries
+    movie_entries = current_user.movie_entries.with_rating
+    # binding.pry
   end
 
 private
