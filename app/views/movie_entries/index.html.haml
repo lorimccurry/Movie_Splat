@@ -37,7 +37,7 @@
       %tbody
         - @movie_entries.each do |movie_entry|
           %tr
-            %td=image_tag movie_entry.movie.poster
+            %td=image_tag movie_image_path(movie_entry.movie)
             %td= movie_entry.movie.title
             %td= movie_entry.movie.year
             %td= movie_entry.movie.rated

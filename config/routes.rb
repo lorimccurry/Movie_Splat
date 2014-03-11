@@ -7,7 +7,10 @@ RottenTomatoesCapstone::Application.routes.draw do
 
   root:to => 'movie_entries#home'
   resources :movie_entries, only: [:home, :create, :new, :index, :show, :edit, :update, :destroy]
-  resources :movies, only: [:new, :create, :index]
+
+  resources :movies, only: [:new, :create, :index] do
+    resource :image, only: [:show]
+  end
 
   match '/splat', to: 'movie_entries#splat', via: 'get'
   # Example of regular route:

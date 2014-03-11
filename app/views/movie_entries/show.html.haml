@@ -1,7 +1,7 @@
 .row
   .small-5.columns
     .poster_show
-      =image_tag "#{@movie_entry.movie.poster}", :id => 'image_show'
+      =image_tag movie_image_path(@movie_entry.movie), :id => 'image_show'
   .small-7.columns
     .text_show
       %h1.subheader#title_show #{@movie_entry.movie.title}

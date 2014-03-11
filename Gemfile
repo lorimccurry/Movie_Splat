@@ -26,6 +26,8 @@ group :doc do
 end
 
 group :test, :development do
+  gem 'better_errors'
+  gem 'binding_of_caller'
   gem 'childprocess'
   gem 'cucumber-rails', require: false
   gem 'database_cleaner'
