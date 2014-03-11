@@ -30,6 +30,18 @@ class MovieEntry < ActiveRecord::Base
     if params.has_key?(:wishlist_own)
       q = q.where(wishlist_own: true)
     end
+    if params.has_key?(:search)
+      q = find(:all, :conditions => ['movie_entries.movie.title LIKE ?', "%#{search}%"])
+      binding.pry
+    end
     q
   }
+
+  def self.search(search)
+    if search
+      find(:all, :conditions => ['title LIKE ?', "%#{search}%"])
+    else
+      find(:all)
+    end
+  end
 end

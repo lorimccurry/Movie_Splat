@@ -5,7 +5,9 @@ class MovieEntriesController < ApplicationController
   end
 
   def index
-    @movie_entries = current_user.movie_entries.filtered_multi(params)
+    # @movie_entries = current_user.movie_entries.filtered_multi(params)
+    @movie_entries = current_user.movie_entries.search(params[:search])
+    # puts @movie_entries.to_sql
   end
 
   def create
