@@ -2,46 +2,45 @@
   .small-12.columns
     %h1.subheader My Movies
 .row
-  .small-2.columns
-    = link_to "All Movies", movie_entries_path, class: 'button radius success', id: 'all_btn'
-  .small-2.columns
-    = link_to "Seen", movie_entries_path(seen: true), class: 'button radius success', id: 'seen_btn'
-  .small-2.columns
-    = link_to "Own", movie_entries_path(own: true), class: 'button radius success', id: 'own_btn'
-  .small-2.columns
-    = link_to "Wishlist See", movie_entries_path(wishlist_see: true), class: 'button radius success', id: 'wish_see_btn'
-  .small-2.columns
-    = link_to "Wishlist Own", movie_entries_path(wishlist_own: true), class: 'button radius success', id: 'wish_own_btn'
-  .small-2.columns
-    = link_to "Add a Movie", new_movie_entry_path, class: 'button radius success', id: 'add_btn'
-.row
-  .small-offset-10.small-2.columns
-    = link_to "Splat mE", splat_path, class: 'button radius alert', id: 'splat_btn'
-.row
-  .small-offset-8.small-4.columns
-    = form_tag movie_entries_path, :method => 'get' do
-      = text_field_tag :search, params[:search], :id => 'search_field'
-      = submit_tag "Search by Title", :title => nil, class: 'button tiny radius'
+  .small-6.columns
+    .panel
+      = link_to "All Movies", movie_entries_path, class: 'button radius success', id: 'all_btn'
+      = link_to "Seen", movie_entries_path(seen: true), class: 'button radius success', id: 'seen_btn'
+      = link_to "Own", movie_entries_path(own: true), class: 'button radius success', id: 'own_btn'
+      = link_to "Wishlist See", movie_entries_path(wishlist_see: true), class: 'button radius success', id: 'wish_see_btn'
+      = link_to "Wishlist Own", movie_entries_path(wishlist_own: true), class: 'button radius success', id: 'wish_own_btn'
+  .small-6.columns
+    .panel
+      = link_to "Add a Movie", new_movie_entry_path, class: 'button radius success', id: 'add_btn'
+      = link_to "Splat mE", splat_path, class: 'button radius alert', id: 'splat_btn'
+      = form_tag movie_entries_path, :method => 'get' do
+        = text_field_tag :search, params[:search], :id => 'search_field'
+        = submit_tag "Search by Title", :title => nil, class: 'button tiny radius', :id => 'search_btn'
 .row
   .small-12.columns
-    %table.library
-      %thead
-        %tr
-          %th
-          %th Title
-          %th Year
-          %th Rated
-          %th Fresh Status
-          %th My Rating
-      %tbody
-        - @movie_entries.each do |movie_entry|
-          %tr
-            %td=image_tag movie_image_path(movie_entry.movie)
-            %td= movie_entry.movie.title
-            %td= movie_entry.movie.year
-            %td= movie_entry.movie.rated
-            %td= movie_entry.movie.tomato_image
-            %td= movie_entry.user_rating
-            %td= link_to "View", movie_entry_path(id: movie_entry.id), class: 'button tiny radius'
-            %td= link_to "Edit", edit_movie_entry_path(id: movie_entry.id), class: 'button tiny radius'
-            %td= button_to("Delete", movie_entry_path(movie_entry), method: :delete, data: {id: movie_entry.id}, class: 'button tiny radius')
+    .panel
+      .library_table
+        %table.library
+          %thead
+            %tr
+              %th
+              %th Title
+              %th Year
+              %th Rated
+              %th Fresh Status
+              %th My Rating
+              %th
+              %th
+              %th
+          %tbody
+            - @movie_entries.each do |movie_entry|
+              %tr
+                %td=image_tag movie_image_path(movie_entry.movie), id: 'poster_index'
+                %td= movie_entry.movie.title
+                %td= movie_entry.movie.year
+                %td= movie_entry.movie.rated
+                %td= movie_entry.movie.tomato_image
+                %td= movie_entry.user_rating
+                %td= link_to "View", movie_entry_path(id: movie_entry.id), class: 'button tiny radius'
+                %td= link_to "Edit", edit_movie_entry_path(id: movie_entry.id), class: 'button tiny radius'
+                %td= button_to("Delete", movie_entry_path(movie_entry), method: :delete, data: {id: movie_entry.id}, class: 'button tiny radius')
