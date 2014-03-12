@@ -25,4 +25,3 @@ Feature: Search movie titles
     Then I should see "2013"
     Then I should see "88"
     Then I should see "fresh"
-    Then I should view the image "http://ia.media-imdb.com/images/M/MV5BNjkxMTc0MDc4N15BMl5BanBnXkFtZTgwODUyNTI1MDE@._V1_SX300.jpg"
