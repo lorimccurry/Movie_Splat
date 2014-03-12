@@ -15,7 +15,6 @@ Feature: View a movie entry
     Then I should see "View"
     Then I follow "View"
     Then I should see "Up"
-    Then I should view the image "http://ia.media-imdb.com/images/M/MV5BMTk3NDE2NzI4NF5BMl5BanBnXkFtZTgwNzE1MzEyMTE@._V1_SX300.jpg"
     Then I should see "2009"
     Then I should see "PG"
     Then I should see "96 min"
