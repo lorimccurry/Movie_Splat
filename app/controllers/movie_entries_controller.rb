@@ -1,6 +1,4 @@
 class MovieEntriesController < ApplicationController
-  before_action :find_movie
-
   def home
   end
 
@@ -57,7 +55,19 @@ class MovieEntriesController < ApplicationController
   end
 
   def splat
-    @movie_entries = current_user.movie_entries
+    @movie_entries = current_user.movie_entries.with_rating
+
+    @user_rating_avg = @movie_entries.average('user_rating').to_i
+    @critic_rating_avg = @movie_entries.average('tomato_meter').to_i
+    @rating_diff_avg = (@user_rating_avg - @critic_rating_avg).abs
+
+    if @rating_diff_avg < 15
+      flash[:notice] = "Fresh! Quit your day job and move to Hollywood. Your average critic rating difference is #{@rating_diff_avg}."
+    elsif @rating_diff_avg > 15 && @rating_diff_avg < 40
+      flash[:alert] = "Ripening! Eat more popcorn. Your average critic rating difference is #{@rating_diff_avg}."
+    elsif @rating_diff_avg >= 40
+      flash[:alert] = "Splat! Your taste sucks. Your average critic rating difference is #{@rating_diff_avg}."
+    end
   end
 
 private
@@ -67,8 +77,5 @@ private
 
   def movie_params
     params.require(:movie).permit(:title)
-  end
-
-  def find_movie
   end
 end

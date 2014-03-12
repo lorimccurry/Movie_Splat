@@ -1,4 +1,3 @@
-%p= current_user.username
 .row
   .small-12.columns
     %h1.subheader My Movies
@@ -18,6 +17,11 @@
 .row
   .small-offset-10.small-2.columns
     = link_to "Splat mE", splat_path, class: 'button radius alert', id: 'splat_btn'
+.row
+  .small-offset-8.small-4.columns
+    = form_tag movie_entries_path, :method => 'get' do
+      = text_field_tag :search, params[:search], :id => 'search_field'
+      = submit_tag "Search by Title", :title => nil, class: 'button tiny radius'
 .row
   .small-12.columns
     %table.library
