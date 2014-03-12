@@ -29,7 +29,6 @@ class MovieEntry < ActiveRecord::Base
       q = q.where(wishlist_own: true)
     end
     if params.has_key?(:search)
-      # movies = Movies.search(params[:search])
       q = joins(:movie).find(:all, :conditions => ['movies.title LIKE ?', "%#{params[:search]}%"])
     end
     q
