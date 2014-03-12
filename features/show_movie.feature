@@ -35,6 +35,6 @@ Feature: View a movie entry
     Then I should see "By tying thousands of balloons to his home, 78-year-old Carl sets out to fulfill his lifelong dream to see the wilds of South America. Russell, a wilderness explorer 70 years younger, inadvertently becomes a stowaway."
     Then I should see "My Comments:"
     Then I should see "It's good"
-    Then I click "My Library"
+    Then I click "My Movies"
     Then I go to the index page
     Then I should see "amy"

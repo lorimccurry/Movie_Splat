@@ -63,7 +63,7 @@ class MovieEntriesController < ApplicationController
 
     if @rating_diff_avg < 15
       flash[:notice] = "Fresh! Quit your day job and move to Hollywood. Your average critic rating difference is #{@rating_diff_avg}."
-    elsif @rating_diff_avg > 15 && @rating_diff_avg < 40
+    elsif @rating_diff_avg >= 15 && @rating_diff_avg < 40
       flash[:alert] = "Ripening! Eat more popcorn. Your average critic rating difference is #{@rating_diff_avg}."
     elsif @rating_diff_avg >= 40
       flash[:alert] = "Splat! Your taste sucks. Your average critic rating difference is #{@rating_diff_avg}."

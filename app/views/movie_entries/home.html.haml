@@ -1,1 +1,11 @@
-%p Sign in or Sign up to open your movie library
+.row
+  .small-12.columns
+    .home_content
+      %h1 Movie splaT
+      %h4 Is your movie taste rotten?
+      - if current_user
+        = link_to "My Movies", movie_entries_path, id: 'movie_library'
+      - else
+        %p Sign in or Sign up to open your movie library
+        = link_to "Sign Up", new_user_registration_path, class: 'button radius success', id: 'sign_up_btn'
+        =link_to "Sign In", new_user_session_path, class: 'button radius', id: 'sign_in_btn'

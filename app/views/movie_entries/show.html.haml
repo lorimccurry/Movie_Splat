@@ -1,29 +1,30 @@
 .row
-  .small-5.columns
+  .small-4.columns
     .poster_show
       =image_tag movie_image_path(@movie_entry.movie), :id => 'image_show'
-  .small-7.columns
-    .text_show
-      %h1.subheader#title_show #{@movie_entry.movie.title}
-      %span#year_show #{@movie_entry.movie.year}
-      %span#rated_show #{@movie_entry.movie.rated}
-      %span#runtime_show #{@movie_entry.movie.runtime}
-      %p#plot_show #{@movie_entry.movie.plot}
-      %dl#show_data
-        %dt Actors:
-        %dd #{@movie_entry.movie.actors}
-        %dt Theater Release:
-        %dd #{@movie_entry.movie.released}
-        %dt DVD Release:
-        %dd #{@movie_entry.movie.dvd}
-        %dt Splat Classification:
-        %dd #{@movie_entry.movie.tomato_image}
-        %dt Tomato Critic Meter:
-        %dd #{@movie_entry.movie.tomato_meter}
-        %dt Tomato Audience Meter:
-        %dd #{@movie_entry.movie.tomato_user_meter}
-        %dt My Rating:
-        %dd #{@movie_entry.user_rating}
-        %dt My Comments:
-        %dd #{@movie_entry.user_comments}
-      = link_to "My Library", movie_entries_path
+  .small-8.columns
+    .panel
+      .text_show
+        %h1.subheader#title_show #{@movie_entry.movie.title}
+        %span#year_show #{@movie_entry.movie.year}
+        %span#rated_show #{@movie_entry.movie.rated}
+        %span#runtime_show #{@movie_entry.movie.runtime}
+        %p#plot_show #{@movie_entry.movie.plot}
+        %dl#show_data
+          %dt Actors:
+          %dd #{@movie_entry.movie.actors}
+          %dt In Theaters:
+          %dd #{@movie_entry.movie.released}
+          %dt On DVD:
+          %dd #{@movie_entry.movie.dvd}
+          %dt Fresh Status:
+          %dd #{@movie_entry.movie.tomato_image}
+          %dt RT Critics:
+          %dd #{@movie_entry.movie.tomato_meter}
+          %dt RT Audience:
+          %dd #{@movie_entry.movie.tomato_user_meter}
+          %dt My Rating:
+          %dd #{@movie_entry.user_rating}
+          %dt My Comments:
+          %dd #{@movie_entry.user_comments}
+          .clear
