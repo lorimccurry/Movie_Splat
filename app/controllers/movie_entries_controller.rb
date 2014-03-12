@@ -61,8 +61,6 @@ class MovieEntriesController < ApplicationController
     @critic_rating_avg = @movie_entries.average('tomato_meter').to_i
     @rating_diff_avg = (@user_rating_avg - @critic_rating_avg).abs
 
-    # @rating_diff_avg = @movie_entries.average("['rating']").to_i
-
     if @rating_diff_avg < 15
       flash[:notice] = "Fresh! Quit your day job and move to Hollywood. Your average critic rating difference is #{@rating_diff_avg}."
     elsif @rating_diff_avg > 15 && @rating_diff_avg < 40
@@ -79,8 +77,5 @@ private
 
   def movie_params
     params.require(:movie).permit(:title)
-  end
-
-  def find_movie
   end
 end
