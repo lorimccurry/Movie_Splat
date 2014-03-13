@@ -6,7 +6,7 @@
       .row
         .small-offset-3.small-6.columns
           = simple_fields_for @movie, :id => @movie.id do |g|
-            = g.input :title, as: :text, label: 'Title'
+            = g.input :title, as: :text, label: 'Title', :autofocus => true
       .row
         .small-offset-3.small-6.columns
           = f.input :seen, as: :boolean, inline_label: 'Seen'

@@ -3,6 +3,7 @@ require 'movie_fetcher'
 class Movie < ActiveRecord::Base
   has_many :movie_entries
   validates :title, presence: true
+  default_scope { order("title ASC") }
 
  def self.find_or_create_by_title(title)
     title = title.downcase.titleize
