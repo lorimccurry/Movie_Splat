@@ -12,7 +12,6 @@ Feature: Create a movie entry
 #   Scenario: Trying to create a blank movie entry fails
 #     Given I'm signed in as "amy"
 #     When I go to the index page
-#     Then I should see "Add a Movie"
 #     Then I click "Add a Movie"
 #     And I should go to the add movie entry page
 #     And I press "Save"
