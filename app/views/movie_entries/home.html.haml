@@ -1,7 +1,7 @@
 .row
   .small-12.columns
     .home_content
-      %h1 Movie splaT
+      %h1#home_title Movie splaT
       %h4 Is your movie taste rotten?
       - if current_user
         = link_to "My Movies", movie_entries_path, id: 'movie_library'
