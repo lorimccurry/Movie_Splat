@@ -239,7 +239,7 @@ $body-font-family: "Averia Sans Libre" "Helvetica Neue", "Helvetica", Helvetica,
 
 // We use these to control text style.
 // $alert-font-weight: normal;
-// $alert-font-size: rem-calc(13);
+$alert-font-size: rem-calc(18);
 // $alert-font-color: #fff;
 // $alert-font-color-alt: scale-color($secondary-color, $lightness: -66%);
 
@@ -1195,7 +1195,7 @@ $body-font-family: "Averia Sans Libre" "Helvetica Neue", "Helvetica", Helvetica,
 
 @import 'foundation';
 // $include-html-panel-classes: $include-html-classes;
-@import url(http://fonts.googleapis.com/css?family=Averia+Sans+Libre);
+@import url(http://fonts.googleapis.com/css?family=Averia+Sans+Libre:400,700);
 
 //----------------------------------------------//
 //-----------------All site---------------------//
