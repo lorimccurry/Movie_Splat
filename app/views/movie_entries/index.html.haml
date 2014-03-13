@@ -1,6 +1,7 @@
 .row
   .small-12.columns
-    %h1.subheader My movieS
+    %h1 My movieS
+    %h5 How do you rate compared to Rotten Tomatoes critics?
 .row
   .small-6.columns
     .panel
@@ -52,3 +53,6 @@
                 %td= link_to "View", movie_entry_path(id: movie_entry.id), class: 'button tiny radius'
                 %td= link_to "Edit", edit_movie_entry_path(id: movie_entry.id), class: 'button tiny radius'
                 %td= button_to("Delete", movie_entry_path(movie_entry), method: :delete, data: {id: movie_entry.id}, class: 'button tiny radius')
+.row
+  .small-12.columns
+    %p#certified *Rotten Tomatoes Certified Fresh is lots of top critic reviews and a steady score of 75 or higher

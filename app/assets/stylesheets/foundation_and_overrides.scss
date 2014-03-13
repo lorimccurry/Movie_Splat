@@ -1210,15 +1210,13 @@ body {
 }
 
 .panel {
-  // $panel-bg: scale-color(rgb(184,171,103), $lightness: -5%);
   background-color: rgba(196,179,109,0.75);
   border-radius: 5px;
-  // opacity: .80;
 }
 
 .clear {clear: both;}
 
-.contain_to_grid .top_bar {margin-bottom: 20px;}
+.contain-to-grid .top-bar {margin-bottom: 20px;}
 
 #nav_title {font-size: 35px;}
 
@@ -1237,6 +1235,11 @@ body {
 #poster_index {max-height: 25%;}
 
 #index_title {text-align: center}
+
+#certified {
+  font-size: .75em;
+  font-style: italic;
+}
 
 
 //----------------------------------------------//

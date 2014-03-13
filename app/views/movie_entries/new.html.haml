@@ -1,6 +1,6 @@
 .row
   .small-offset-2.small-8.columns
-    %h2.subheader Add a moviE
+    %h2 Add a moviE
     .panel
       = simple_form_for @movie_entry do |f|
         .inputs
@@ -22,7 +22,7 @@
               = f.input_field :wishlist_own, as: :boolean, inline_label: 'Wishlist Own'
           .row
             .small-offset-3.small-6.columns
-              = f.input :user_rating, as: :integer, label: 'My Rating:'
+              = f.input :user_rating, as: :integer, label: 'My Rating from 0 - 100:'
           .row
             .small-offset-3.small-6.columns
               = f.input :user_comments, as: :text, label: 'My Comments:'
