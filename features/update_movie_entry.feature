@@ -34,3 +34,19 @@ Feature: Edit a movie entry
     Then I should see "amy"
     And I should see a movie entry with a title of "Gravity" within the library
     And I should see a movie entry with a user rating of "78" within the library
+
+  Scenario: Save without movie title fails
+    Given I'm signed in as "amy"
+    And the movie "Up"
+    And the following movie entries
+      | movie | user | seen | own  | wishlist_see | wishlist_own | user_rating | user_comments |
+      | Up    | amy  | true | true | true         | true         | 90          | It's good     |
+
+    When I go to the index page
+    Then I should see "Up"
+    Then I follow "Edit"
+    Then I should see "Edit moviE"
+    Then I fill in "Title" with ""
+    And I select "Save" for the movie ""
+    Then I should see: "Movie can't be blank"
+    And I should see "Edit moviE"
