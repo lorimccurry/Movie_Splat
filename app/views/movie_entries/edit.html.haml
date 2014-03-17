@@ -1,31 +1,32 @@
 .row
-  .small-offset-3.small-9.columns
+  .small-offset-2.small-8.columns
     %h2 Edit moviE
-  = simple_form_for @movie_entry, :id => @movie_entry.id do |f|
-    .inputs
-      .row
-        .small-offset-3.small-6.columns
-          = simple_fields_for @movie, :id => @movie.id do |g|
-            = g.input :title, as: :text, label: 'Title', :autofocus => true
-      .row
-        .small-offset-3.small-6.columns
-          = f.input :seen, as: :boolean, inline_label: 'Seen'
-      .row
-        .small-offset-3.small-6.columns
-          = f.input :own, as: :boolean, inline_label: 'Own'
-      .row
-        .small-offset-3.small-6.columns
-          = f.input_field :wishlist_see, as: :boolean, inline_label: 'Wishlist See'
-      .row
-        .small-offset-3.small-6.columns
-          = f.input_field :wishlist_own, as: :boolean, inline_label: 'Wishlist Own'
-      .row
-        .small-offset-3.small-6.columns
-          = f.input :user_rating, as: :integer, label: 'My Rating:'
-      .row
-        .small-offset-3.small-6.columns
-          = f.input :user_comments, as: :text, label: 'My Comments:'
-    .actions
-      .row
-        .small-offset-3.small-3.columns
-          = f.button :submit, 'Save', class: 'button radius alert'
+    .panel
+      = simple_form_for @movie_entry, :id => @movie_entry.id do |f|
+        .inputs
+          .row
+            .small-offset-3.small-6.columns
+              = simple_fields_for @movie, :id => @movie.id do |g|
+                = g.input :title, as: :text, label: 'Title', :autofocus => true, :required => true
+          .row
+            .small-offset-3.small-6.columns
+              = f.input :seen, as: :boolean, inline_label: 'Seen'
+          .row
+            .small-offset-3.small-6.columns
+              = f.input :own, as: :boolean, inline_label: 'Own'
+          .row
+            .small-offset-3.small-6.columns
+              = f.input_field :wishlist_see, as: :boolean, inline_label: 'Wishlist See'
+          .row
+            .small-offset-3.small-6.columns
+              = f.input_field :wishlist_own, as: :boolean, inline_label: 'Wishlist Own'
+          .row
+            .small-offset-3.small-6.columns
+              = f.input :user_rating, as: :integer, label: 'My Rating:'
+          .row
+            .small-offset-3.small-6.columns
+              = f.input :user_comments, as: :text, label: 'My Comments:'
+        .actions
+          .row
+            .small-offset-3.small-3.columns
+              = f.button :submit, 'Save', class: 'button radius alert'

@@ -7,10 +7,10 @@ class MovieEntriesController < ApplicationController
   end
 
   def create
-    movie_entry = current_user.movie_entries.build(movie_entry_params)
-    movie = Movie.find_or_create_by_title(movie_params[:title].downcase.titleize)
-    movie_entry.movie = movie
-    if movie_entry.save
+    @movie_entry = current_user.movie_entries.build(movie_entry_params)
+    @movie = Movie.find_or_create_by_title(movie_params[:title].downcase.titleize)
+    @movie_entry.movie = @movie
+    if @movie_entry.save
       flash[:notice] = "Your movie entry has been saved"
       redirect_to movie_entries_path
     else

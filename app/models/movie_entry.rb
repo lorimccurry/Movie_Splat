@@ -1,6 +1,8 @@
 class MovieEntry < ActiveRecord::Base
   belongs_to :movie
   belongs_to :user
+  validates :movie_id, :presence => true
+  validates :user_rating, :numericality => { :only_integer => true, :greater_than_or_equal_to => 0, :less_than_or_equal_to => 100, :allow_nil => true }
 
   scope :only_movies_rated, -> {where.not(user_rating: 'null')}
   scope :with_rating, ->(){
